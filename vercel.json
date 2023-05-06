@@ -3,16 +3,17 @@
     "builds": [
       {
         "src": "./src/app.js",
-        "use": "@vercel/node"
+        "use": "@now/node",
+        "config": {
+          "maxDuration": 10000
+        }
       }
     ],
     "routes": [
-        {
-         
-          "src": "/(.*)",
-          
-          "dest": "src/app.js"
-        }
-        
-      ]
+      {
+        "src": "/(.*)",
+        "dest": "src/app.js"
+      }
+    ]
   }
+  
