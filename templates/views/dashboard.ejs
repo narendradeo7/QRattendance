@@ -61,13 +61,27 @@
 </div>
 
 
-  <h3 class="sucmsg">  <%= smsgAdjective %> <br> <span><%= uName %> </span> <br> <%= sMsg %> </h3>
+  <!-- <h3 class="sucmsg">  Great <br> <span><%= uName %> </span> <br> You have been logged in Successfully </h3> -->
+  <h1><%=userenroll%></h1>
+  <div id="qrcode"></div>
 
 <a href="/login" class="loginbtn">login </a>
 
       </div>
 
 
+<!-- script for qrcode js  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script type="text/javascript">
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: '<%=userenroll %>',
+        width: 160,
+        height: 160,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+    </script>
 
     </body>
     </html>

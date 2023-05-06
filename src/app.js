@@ -33,8 +33,12 @@ const alrt = require(js_path);
 var serveralboxStyle="display:none;";
 var serveralrtmsg="";
 
+
+
+
+
 // an array of email ids of admin 
-var admins=["admin0790@gmail.com","ksinghal@gmail.com"];
+var admins=["admin0790@gmail.com","ksinghal@gmail.com","gupta2@gmail.com"];
 
 
 
@@ -85,19 +89,19 @@ res.render("signup");
 
 // getiing login page 
 
-// app.get("/login",(req,res)=>{
+app.get("/login",(req,res)=>{
     
-//     res.render("login",{alboxStyle:serveralboxStyle,alrtmsg:serveralrtmsg});
+    res.render("login",{alboxStyle:serveralboxStyle,alrtmsg:serveralrtmsg});
     
-//     });
+    });
 
 
-//     // for attendance scanner 
+    // for attendance scanner 
 
-//     app.get("/scanner",(req,res)=>{
-//         res.render("scanner");
+    app.get("/scanner",(req,res)=>{
+        res.render("scanner");
         
-//         });
+        });
     
 
 
@@ -108,10 +112,6 @@ res.render("signup");
 
 
 //    responding to the post request of the routes 
-
-
-
-
 
 // post req of signup
 
@@ -199,79 +199,43 @@ const password = req.body.password;
 console.log("entered into login route post")
 // now we will search for the email in our database 
 
-userModel.findOne({email:useremail},function(err,foundUser){
+userModel.findOne({ email: useremail })
+  .then(foundUser => {
+    if (foundUser) {
+      return bcrypt.compare(password, foundUser.password)
+        .then(result => {
+          if (result === true) {
+            admins.some((mail) => {
+              if (mail === useremail) {
+                res.render("scanner");
+                return true;
+              }
+            });
 
-
-    // findone method to fine same mail in our database 
-
-
-
-        
-    
-
-
-    if(foundUser){
-
-        // if we have foundUser then we will check password using bcrypt function 
-        // loading hash from our database 
-
-        bcrypt.compare(password, foundUser.password,function(err, result){
-// result if true 
-if(result==true){
-
-
-    // checking if the user is a admin or student 
-    admins.some((mail) => {
-        if (mail === useremail) {
-          res.render("scanner");
-          return true; // exit the loop if there is a match
-        }
-      });
-      
-      // if the loop finishes without finding a match, execute code here
-      
-// giving student dashboard 
-
- res.render("dashboard",{uName:foundUser.name,userenroll:foundUser.enrollment});
-    // res.render("success",{uName:foundUser.name,smsgAdjective:"Great",sMsg:" Login Successfull"});
-  
-}
-
-
-// in case of any errors 
-
-
-
-else{
-
-     // creating alert msg and icon
-     serveralrtmsg="Wrong Password !";
-     res.render("login",{alboxStyle:"display:block;",alrtmsg:serveralrtmsg});
-
-    //  alrt('Wrong Password');
-    //  res.render("error",{alertMsg:'Wrong Password'});
- 
-}
-
-
+            res.render("dashboard", {
+              uName: foundUser.name,
+              userenroll: foundUser.enrollment
+            });
+          } else {
+            serveralrtmsg = "Wrong Password !";
+            res.render("login", {
+              alboxStyle: "display:block;",
+              alrtmsg: serveralrtmsg
+            });
+          }
         });
+    } else {
+      serveralrtmsg = "Invalid Credentials !";
+      res.render("login", {
+        alboxStyle: "display:block;",
+        alrtmsg: serveralrtmsg
+      });
     }
-
-
-
-// foundUser ends 
-
-else{
+  })
+  .catch(err => {
     console.log(err);
-        // creating alert msg and icon
-        serveralrtmsg="Invalid Credentials !";
-     res.render("login",{alboxStyle:"display:block;",alrtmsg:serveralrtmsg});
-        // alrt('Invalid Credentials');
-        // res.render("error",{alertMsg:'Invalid Credentials'});
-}
+  });
 
-
-});
 
 
 });
