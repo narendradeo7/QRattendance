@@ -33,9 +33,7 @@
     /* style of navbar  */
 
     .nav_head{
-        background-color: var(--main-cement);
-  
-  
+      background-color: #02003ddb;
         /* fixing navbar to top when it reaches o px from top  */
         position: sticky;
         top: -1px;
@@ -45,7 +43,6 @@
       /* background fo nav  */
       .navbar{
          color: rgb(255, 255, 255);
-         background-color: var(--main-cement);
          text-shadow: 0px 2px 5px black;
          
       }
@@ -55,7 +52,7 @@
       .navbar a{
         color: white;
         font-size: 1.4rem;
-        
+        font-family: 'Play', sans-serif;
       }
       .navbar a:hover{
      color: var(--main-color) !important;
@@ -76,7 +73,7 @@
       .nav-brick{
         width: 2.5em;
         height: 2.5em;
-        background-image: url('https://www.svgrepo.com/show/147781/brick.svg');
+        background-image: url('https://www.svgrepo.com/show/512607/object-placement-68.svg');
       }
   
       /* giving spaces between li of nav element 
@@ -86,21 +83,54 @@
        }
   
        /* style of logo  */
+       /* styling og logo  */
+.botcircle {
+  height: 101px;
+  width: 101px;
+  position: absolute;
+  background: #f2f5f2eb;
+  border-radius: 50%;
+  top: 12%;
+}
 
-.logoimg{
+.logoimg {
+  width: 71px;
+    margin-right: 5px;
+    position: relative;
+    top: 10%;
+    left: 3.5%;
+}
+
+.botcircle:hover {
+  background-color: #eeefeeeb;
+  /* filter: drop-shadow(7px 4px 5px rgb(243, 152, 68));   */
+}
+.formicon{
+  filter: drop-shadow(2px 4px 2px rgb(0 0 0));
+
+}
+/* .logoimg{
     width: 41px;
     margin-right: 5px;
  }
  .logoimg:hover{
     width: 80px;
     filter: drop-shadow(7px 4px 5px var(--main-color));  
- }
+ } */
 
 
  /* styling for the form part 
  
  */
 
+ .formheading{
+  font-family: 'Braah One', sans-serif;
+  font-weight: 400;
+  color: white;
+ }
+ .gendiv{
+  color: white;
+ }
 
  
  .bd-placeholder-img {
@@ -168,7 +198,7 @@
 .formsec{
 
     position: relative;
-    top: 5vh;
+    margin-top: 5vh;
 }
 
 
@@ -183,7 +213,7 @@
   }
   
   label {
-    margin-right: 15px;
+    margin-right: 12px;
     line-height: 32px;
   }
   
@@ -204,7 +234,7 @@
   }
   
   input:checked {
-    border: 6px solid black;
+    border: 6px solid #1038ff;;
   }
 
   ::-webkit-input-placeholder {
@@ -284,7 +314,7 @@ max-width: 350px !important;
     font-weight: 900;
     position: relative;
     bottom: 0px;
-    color:var(--main-cement);
+    color:white;
 
 }
 
@@ -300,15 +330,19 @@ max-width: 350px !important;
 
 .succespopup{
     position: relative;
+    font-family: 'Braah One', sans-serif;
+    color: white;
     left: 29%;
-    top: 20vh;
+    top: 14vh;
     max-width: 45%;
-    box-shadow: 0em 3em 8em #c5c5c5;
+    box-shadow: inset 0em 3em 8em #ffffff6e;
+    text-shadow: 2px 5px 2px black;
     
     border-radius: 6%;
 }
 .succespopup:hover{
-    box-shadow: 0em 3em 8em #737373;  
+    box-shadow: 0em 3em 10em 5px #050505eb;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
  
 .sucmsg{
@@ -316,12 +350,15 @@ max-width: 350px !important;
     padding: 1px 9px 21px;
     position: relative;
     top: -29px;
-    font-family: 'Raleway';
+    font-family: 'raleway';
     line-height: 34px;
+    font-weight: 400;
 }
 
 .sucmsg span {
-    font-weight: 700;
+  font-weight: 700;
+  font-family: 'Play', sans-serif;
+  text-transform: capitalize;
 }
 
 
@@ -333,8 +370,10 @@ max-width: 350px !important;
 .alertmsg{
   display: none;
   font-family: 'Raleway';
-  line-height: 34px;
-  color: red;
+  font-weight: 600;
+  text-shadow: 1px 2px 2px rgb(0 0 0);
+    line-height: 34px;
+    color: red;
 }
 
 
@@ -360,5 +399,28 @@ max-width: 350px !important;
 
 }
 
+/* background image  */
+
+body{
+  background-image: url("../images/cdcbck.jpg");
+  /* min-height: 100vh;
+    background-size: cover; */
+    backdrop-filter: brightness(0.7) blur(3px);
+    min-height: 100vh;
+    background-size: 110%;
+    background-position-x: 78%;
 
 
+}
+
+.copyright{
+  color: rgb(238, 236, 236)!important;
+}
+
+/* styling of dashboard */
+.stddet{
+  font-size: 2.1rem;
+}
+.qrdesc{
+  margin-top: 7px;
+}

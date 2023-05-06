@@ -214,7 +214,7 @@ userModel.findOne({ email: useremail })
 
             res.render("dashboard", {
               uName: foundUser.name,
-              userenroll: foundUser.enrollment
+              userenroll: foundUser.enrollment,usermob:foundUser.mobile
             });
           } else {
             serveralrtmsg = "Wrong Password !";
