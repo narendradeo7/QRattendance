@@ -3,7 +3,10 @@
     "builds": [
       {
         "src": "./src/app.js",
-        "use": "@now/node"
+        "use": "@now/node",
+        "config": {
+          "maxDuration": 30000
+        }
       }
     ],
     "routes": [
@@ -11,11 +14,6 @@
         "src": "/(.*)",
         "dest": "src/app.js"
       }
-    ],
-    "functions": {
-      "./src/**/*.js": {
-        "maxDuration": 30000
-      }
-    }
+    ]
   }
   
