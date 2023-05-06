@@ -138,6 +138,8 @@ app.post("/",function(req,res){
 
 bcrypt.hash(req.body.password,saltRounds, function(err,hash){
 
+console.log("password has been hashed");
+
 // stored tha hash with salrounds in our password db 
 
 // now creating new user in user model 
@@ -155,6 +157,8 @@ mobile:req.body.mob
 
 
 });
+
+console.log("new user has been created");
 
 // now we will be saving that user in model and callback if error 
 

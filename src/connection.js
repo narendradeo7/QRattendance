@@ -16,7 +16,7 @@ useUnifiedTopology:true
 
 }
 
-
+console.log(process.env.MONGO_USER);
 const uri = 'mongodb+srv://'+process.env.MONGO_USER+':'+process.env.MONGO_PASSWORD+'@7nandy.zjwykvv.mongodb.net/maitAuthentication?retryWrites=true&w=majority'
 
 
