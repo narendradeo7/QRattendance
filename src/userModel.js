@@ -1,3 +1,4 @@
+console.log("working on user model");
 // requiring mongoose 
 
 const mongoose = require("mongoose");
@@ -17,10 +18,12 @@ mobile:'String',
 
 });
 
+
 // providing schema 
 
 const User =mongoose.model("User",schema);
 
+console.log("user model created");
 
 
 // exporting user model 
