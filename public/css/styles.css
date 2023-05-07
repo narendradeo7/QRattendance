@@ -73,7 +73,7 @@
       .nav-brick{
         width: 2.5em;
         height: 2.5em;
-        background-image: url('https://www.svgrepo.com/show/512607/object-placement-68.svg');
+        background-image: url('../images/attendtoggler.svg');
       }
   
       /* giving spaces between li of nav element 
@@ -105,6 +105,29 @@
   background-color: #eeefeeeb;
   /* filter: drop-shadow(7px 4px 5px rgb(243, 152, 68));   */
 }
+/* media query for logo  */
+
+@media (max-width:426px){
+  .botcircle{
+    height: 69px;
+    width: 69px;
+    position: absolute;
+    background: #f2f5f2eb;
+    border-radius: 50%;
+    top: 39%;
+}
+  .logoimg{
+    width: 50px;
+    margin-right: 5px;
+    position: relative;
+    top: 10%;
+    left: 6.5%;
+  }
+}
+
+
+
+
 .formicon{
   filter: drop-shadow(2px 4px 2px rgb(0 0 0));
 
@@ -306,7 +329,14 @@ max-width: 350px !important;
 }
 
 /* login icon  */
-
+.info{
+  margin-bottom: -1%;
+  padding: 0;
+  font-size: 75%;
+  font-family: 'raleway';
+    line-height: 34px;
+    font-weight: 400;
+}
 .loginbtn{
     text-decoration: none;
     font-size: 34px;
@@ -329,12 +359,12 @@ max-width: 350px !important;
 
 
 .succespopup{
-    position: relative;
+    
     font-family: 'Braah One', sans-serif;
     color: white;
-    left: 29%;
-    top: 14vh;
-    max-width: 45%;
+    padding: 0 2%;
+    
+    max-width: 70%;
     box-shadow: inset 0em 3em 8em #ffffff6e;
     text-shadow: 2px 5px 2px black;
     
@@ -361,7 +391,12 @@ max-width: 350px !important;
   text-transform: capitalize;
 }
 
-
+.popupcontainer{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
 
 
 
@@ -375,7 +410,17 @@ max-width: 350px !important;
     line-height: 34px;
     color: red;
 }
-
+.stddetails{
+  font-weight: 400!important;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.stdhead{
+  font-weight: 700!important;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.popenroll{
+  margin-top: -5%;
+}
 
 
 
@@ -423,4 +468,5 @@ body{
 }
 .qrdesc{
   margin-top: 7px;
+  margin-bottom: -5px;
 }
