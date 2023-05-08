@@ -344,7 +344,7 @@ max-width: 350px !important;
     font-weight: 900;
     position: relative;
     bottom: 0px;
-    color:white;
+    color:rgb(24, 19, 19);
 
 }
 
@@ -361,13 +361,12 @@ max-width: 350px !important;
 .succespopup{
     
     font-family: 'Braah One', sans-serif;
-    color: white;
+    background-color: #ffffff8a;
+    color: #221f1f;
+    text-shadow: white 2px 3px 2px;
     padding: 0 2%;
-    
     max-width: 70%;
     box-shadow: inset 0em 3em 8em #ffffff6e;
-    text-shadow: 2px 5px 2px black;
-    
     border-radius: 6%;
 }
 .succespopup:hover{
